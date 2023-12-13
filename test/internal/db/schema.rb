@@ -42,4 +42,15 @@ ActiveRecord::Schema.define do
     t.datetime :last_run_at
     t.timestamps null: false
   end
+
+  create_table :blazer_uploads do |t|
+    t.references :creator
+    t.string :table
+    t.text :description
+    t.timestamps null: false
+  end
+
+  create_table :users do |t|
+    t.string :name
+  end
 end
